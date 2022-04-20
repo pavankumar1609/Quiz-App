@@ -17,10 +17,10 @@ function App() {
   const handlecurrentQuestion = (isCorrect) => setIsCorrect(isCorrect);
 
   const handleSubmit = () => {
-    if (currentQuestion < data.length - 1) {
+    if (currentQuestion < data.length - 1)
       setcurrentQuestion(currentQuestion + 1);
-      if (isCorrect) setCountScore(countScore + 1);
-    }
+
+    if (isCorrect) setCountScore(countScore + 1);
 
     if (currentQuestion === data.length - 1) setShowScore(true);
   };
