@@ -8,21 +8,20 @@ function App() {
   const [showScore, setShowScore] = useState(false);
   const [countScore, setCountScore] = useState(0);
   const [startQuiz, setStartQuiz] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   useEffect(() => {
     setData(questions);
   }, []);
 
-  const handlecurrentQuestion = (isCorrect) => {
-    setIsSelected(true);
-
-    if (isCorrect) setCountScore(countScore + 1);
-  };
+  const handlecurrentQuestion = (isCorrect) => setIsCorrect(isCorrect);
 
   const handleSubmit = () => {
-    if (currentQuestion < data.length - 1 && isSelected)
+    if (currentQuestion < data.length - 1) {
       setcurrentQuestion(currentQuestion + 1);
+      if (isCorrect) setCountScore(countScore + 1);
+    }
+
     if (currentQuestion === data.length - 1) setShowScore(true);
   };
 
