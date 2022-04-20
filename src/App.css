@@ -11,31 +11,67 @@ body {
 .quiz {
   display: flex;
   min-height: 40vh;
+  width: 600px;
   border-radius: 10px;
-  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 2px 10px #ffffff66;
   padding: 20px;
 }
 
-.quiz p:first-child {
-  font-size: 24px;
+.quiz-text {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .quiz-question {
   padding-right: 30px;
+  width: 300px;
 }
 
-.quiz-question > p:first-child {
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.score p {
+  font-size: 25px;
+}
+
+.score button {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
   font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #1e704e;
+  margin-top: 10px;
+}
+
+.score button:hover {
+  background: #9347e0;
+}
+
+.submit-btn {
+  width: 25%;
+  margin: 0px auto;
+}
+
+.submit-btn:hover {
+  background-color: #9347e0;
 }
 
 .quiz-options {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 300px;
 }
 
 .quiz-options button {
-  min-width: 300px;
   text-align: start;
   cursor: pointer;
   padding: 10px;
@@ -48,12 +84,17 @@ body {
   font-size: 16px;
 }
 
-button:hover {
+button:focus {
   background-color: #1e704e;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .quiz {
-    display: block;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .quiz-options {
+    margin-top: 20px;
   }
 }
